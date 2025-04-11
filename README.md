@@ -59,9 +59,9 @@ bash ./scripts/run_create_lora_data.sh
 ```
 bash ./scripts/run_train_lora.sh
 ```
-You might need to change the script if you want play with different ranks and epochs.   
+You might need to change the script if you want play with different ranks and epochs.
 
-####Benchmark
+#### Benchmark
 * **ResNet50**: Run TDA-L using the ResNet50 model:
 ```
 bash ./scripts/run_benchmark_rn50.sh 
