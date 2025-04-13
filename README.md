@@ -62,7 +62,7 @@ bash ./scripts/run_train_lora.sh
 You might need to change the script if you want play with different ranks and epochs.
 
 #### Benchmark
-You might have to change the lora_weight file name based on the rank you used.
+You might have to change the lora_weight file name in ```tda_runner_lora.py``` file at 194 line based on the rank you used in the earlier step.
 * **ResNet50**: Run TDA-L using the ResNet50 model:
 ```
 bash ./scripts/run_benchmark_rn50.sh 
