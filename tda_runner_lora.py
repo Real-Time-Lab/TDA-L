@@ -191,7 +191,7 @@ def run_test_tda_with_lora(pos_cfg, neg_cfg, loader, clip_model, clip_weights, l
             # Load LoRA matrices from checkpoint (just once, not per sample!)
             try:
                 print("Loading LoRA weights...")
-                lora_checkpoint = torch.load("./lora_weights/lora_multi_dataset_rank4.pt", weights_only=True)
+                lora_checkpoint = torch.load("./lora_weights/lora_multi_dataset_rank16.pt", weights_only=True)
                 lora_a = lora_checkpoint['lora_a'].cuda().half()  # Convert to half precision
                 lora_b = lora_checkpoint['lora_b'].cuda().half()  # Convert to half precision
                 print(f"LoRA matrices loaded: a={tuple(lora_a.shape)}, b={tuple(lora_b.shape)}")

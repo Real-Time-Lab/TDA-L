@@ -38,7 +38,7 @@ To set up all required datasets, kindly refer to the guidance in [DATASETS.md](d
 
 ## Run TDA
 ### Configs
-The configuration for TDA hyperparameters in `configs/dataset.yaml` can be tailored within the provided file to meet the needs of various datasets. This customization includes settings for both the positive and negative caches as outlined below:
+The configuration for TDA-L hyperparameters in `configs/dataset.yaml` can be tailored within the provided file to meet the needs of various datasets. This customization includes settings for both the positive and negative caches as outlined below:
 * **Positive Cache Configuration:** Adjustments can be made to the `shot_capacity`, `alpha`, and `beta` values to optimize performance.
 
 * **Negative Cache Configuration:** Similar to the positive cache, the negative cache can also be fine-tuned by modifying the `shot_capacity`, `alpha`, `beta`, as well as the `entropy_threshold` and `mask_threshold` parameters.
@@ -62,6 +62,7 @@ bash ./scripts/run_train_lora.sh
 You might need to change the script if you want play with different ranks and epochs.
 
 #### Benchmark
+You might have to change the lora_weight file name based on the rank you used.
 * **ResNet50**: Run TDA-L using the ResNet50 model:
 ```
 bash ./scripts/run_benchmark_rn50.sh 

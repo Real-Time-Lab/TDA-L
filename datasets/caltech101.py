@@ -1,7 +1,6 @@
 import os
 
-from .utils import DatasetBase
-from .oxford_pets import OxfordPets
+from .utils import Datum, DatasetBase, read_json
 
 
 template = ["itap of a {}.",
@@ -12,10 +11,29 @@ template = ["itap of a {}.",
             "art of the {}.",
             "a photo of the small {}."]
 
+def read_split(filepath, path_prefix):
+        def _convert(items):
+            out = []
+            for impath, label, classname in items:
+                impath = os.path.join(path_prefix, impath)
+                item = Datum(
+                    impath=impath,
+                    label=int(label),
+                    classname=classname
+                )
+                out.append(item)
+            return out
+        
+        print(f'Reading split from {filepath}')
+        split = read_json(filepath)
+        test = _convert(split['test'])
+
+        return test
 
 class Caltech101(DatasetBase):
 
     dataset_dir = '/home/rhossain/exp/TDAQ/dataset/caltech-101'
+    
 
     def __init__(self, root):
         self.dataset_dir = os.path.join(root, self.dataset_dir)
@@ -24,6 +42,6 @@ class Caltech101(DatasetBase):
 
         self.template = template
 
-        test = OxfordPets.read_split(self.split_path, self.image_dir)
+        test = read_split(self.split_path, self.image_dir)
 
         super().__init__(test=test)
