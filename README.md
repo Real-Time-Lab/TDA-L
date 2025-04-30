@@ -22,7 +22,7 @@ Follow these steps to set up a conda environment and ensure all necessary packag
 
 ```bash
 git clone git@github.com:Real-Time-Lab/TDA-L.git
-cd TDA
+cd TDA-L
 
 conda create -n tda python=3.8.20
 conda activate tda-l
