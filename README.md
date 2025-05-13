@@ -24,8 +24,8 @@ Follow these steps to set up a conda environment and ensure all necessary packag
 git clone git@github.com:Real-Time-Lab/TDA-L.git
 cd TDA-L
 
-conda create -n tda python=3.8.20
-conda activate tda-l
+conda create -n tdal python=3.8.20
+conda activate tdal
 
 # The results are produced with PyTorch 2.4.1 and CUDA 12.1
 conda install pytorch==2.4.1 torchvision==0.15.1 torchaudio==2.0.1 cudatoolkit=12.1 -c pytorch
